@@ -1,0 +1,136 @@
+/* Cronômetro: fundo azul degradê, fonte gótica + digital, centralizado, botões com fade */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(135deg, #071428 0%, #163047 60%, #2a3946 100%);
+    font-family: 'UnifrakturCook', 'Gothic A1', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ffffff;
+}
+
+
+.cronometro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255,255,255,0.03);
+    padding: 28px 32px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    width: min(520px, 92vw);
+}
+
+.display {
+    font-family: 'Orbitron', 'UnifrakturCook', monospace;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: 6px;
+    margin-bottom: 14px;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.55);
+    color: #c9dcc6; /* verde acinzentado claro */
+    width: 100%;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.botoes {
+    margin-top: 18px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 14px;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease, opacity .14s ease;
+    opacity: 0.95;
+    flex: 1; /* faz os botões preencherem toda a largura do container */
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+    opacity: 1;
+}
+
+#setar {
+    background: linear-gradient(180deg, rgba(46,204,113,0.95), rgba(39,174,96,0.9));
+}
+
+#setar:hover { background: linear-gradient(180deg, rgba(39,174,96,1), rgba(30,150,70,1)); }
+
+#resetar {
+    background: linear-gradient(180deg, rgba(231,76,60,0.95), rgba(192,57,43,0.9));
+}
+
+#resetar:hover { background: linear-gradient(180deg, rgba(192,57,43,1), rgba(170,50,36,1)); }
+
+#iniciar {
+    background: rgba(46,204,113,0.88);
+}
+
+#iniciar:hover { background: rgba(39,174,96,1); }
+
+#parar {
+    background: rgba(231,76,60,0.88);
+}
+
+#parar:hover { background: rgba(192,57,43,1); }
+
+@media (max-width:420px) {
+    .display { font-size: 44px; letter-spacing: 2px; }
+    .cronometro { padding: 18px; }
+    button { padding: 8px 10px; }
+}
+
+/* Modal de Setar tempo */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    z-index: 60;
+}
+.modal[aria-hidden="false"] { display: flex; }
+.modal-content {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    padding: 18px 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.modal-content h2 { margin: 0 0 10px 0; font-size: 18px; }
+.modal-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 8px 0; }
+.modal-row input[type="number"] { width: 100px; padding: 6px 8px; border-radius: 6px; border: none; }
+.modal-actions { display: flex; gap: 10px; margin-top: 12px; }
+.modal-actions button { flex: 1; }
+
+

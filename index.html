@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cronometro">
+        <div class="display">00:00:00</div>
+        <div class="botoes">
+            <button id="setar">Setar</button>
+            <button id="resetar">Resetar</button>
+            <button id="iniciar">Iniciar</button>
+            <button id="parar">Parar</button>
+        </div>
+    </div>
+    <!-- Modal para definir tempo -->
+    <div id="set-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <h2>Definir tempo</h2>
+            <div class="modal-row">
+                <label><input type="checkbox" id="use-hours" checked> Horas</label>
+                <input id="set-hours" type="number" min="0" value="0">
+            </div>
+            <div class="modal-row">
+                <label><input type="checkbox" id="use-minutes" checked> Minutos</label>
+                <input id="set-minutes" type="number" min="0" max="59" value="0">
+            </div>
+            <div class="modal-row">
+                <label><input type="checkbox" id="use-seconds" checked> Segundos</label>
+                <input id="set-seconds" type="number" min="0" max="59" value="0">
+            </div>
+            <div class="modal-actions">
+                <button id="set-confirm">Confirmar</button>
+                <button id="set-cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
